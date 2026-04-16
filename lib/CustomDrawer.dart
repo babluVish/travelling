@@ -22,12 +22,8 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "Deepak Srivastava",
+                  "Welcome Admin",
                   style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-                Text(
-                  "deepak@email.com",
-                  style: TextStyle(color: Colors.white70),
                 ),
               ],
             ),
@@ -46,18 +42,17 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
 
-          ListTile(
-            leading: Icon(Icons.search),
-            title: Text("Search"),
-            onTap: () {},
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.search),
+          //   title: Text("Search"),
+          //   onTap: () {},
+          // ),
 
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("Settings"),
-            onTap: () {},
-          ),
-
+          // ListTile(
+          //   leading: Icon(Icons.settings),
+          //   title: Text("Settings"),
+          //   onTap: () {},
+          // ),
           Divider(),
 
           // 🔻 Logout

@@ -6,13 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class EnquiryList extends StatelessWidget {
-  List<Map<String, dynamic>> items = [
-    {"title": "Users", "icon": Icons.people},
-    {"title": "Orders", "icon": Icons.shopping_cart},
-    {"title": "Reports", "icon": Icons.bar_chart},
-    {"title": "Settings", "icon": Icons.settings},
-  ];
-
   String? get selectedItem => null;
 
   final controller = Get.put(DropdownController());
@@ -25,62 +18,59 @@ class EnquiryList extends StatelessWidget {
       body: Center(
         child: Stack(
           children: [
-            Expanded(
-              child: GridView.builder(
-                itemCount: 50,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 6,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 4,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(children: [Text(' Name:'), Text(' Aman')]),
-                        // SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Text(' Mobile Number:'),
-                            Text(' 9644434342'),
-                          ],
-                        ),
-
-                        Row(
-                          children: [
-                            Text(' Address:'),
-                            Expanded(
-                              child: Text(
-                                ' Bargdawa Gorakhpur',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(children: [Text(' Reference:'), Text(' Aman')]),
-                        Row(children: [Text(' Description:'), Text('Aman')]),
-                        Row(
-                          children: [Text(' Created At:'), Text('2-20-2026')],
-                        ),
-                        Row(children: [Text(' Status :'), Text(' Pending')]),
-
-                        SizedBox(height: 20),
-                        SizedBox(
-                          width: 200,
-                          child: ElevatedButton(
-                            onPressed: () => {_showModelBottomSheet(context)},
-                            child: Text("Share"),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
+            GridView.builder(
+              itemCount: 50,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 6,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
               ),
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 4,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(children: [Text(' Name:'), Text(' Aman')]),
+                      // SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text(' Mobile Number:'),
+                          Text(' 9644434342'),
+                        ],
+                      ),
+
+                      Row(
+                        children: [
+                          Text(' Address:'),
+                          Expanded(
+                            child: Text(
+                              ' Bargdawa Gorakhpur',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(children: [Text(' Reference:'), Text(' Aman')]),
+                      Row(children: [Text(' Description:'), Text('Aman')]),
+                      Row(children: [Text(' Created At:'), Text('2-20-2026')]),
+                      Row(children: [Text(' Status :'), Text(' Pending')]),
+
+                      SizedBox(height: 20),
+                      SizedBox(
+                        width: 200,
+                        child: ElevatedButton(
+                          onPressed: () => {_showModelBottomSheet(context)},
+                          child: Text("Share"),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
+
             Positioned(
               bottom: 16,
               right: 16,
