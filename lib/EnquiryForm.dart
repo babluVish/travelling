@@ -1,3 +1,5 @@
+import 'package:adbhut/CustomDrawer.dart';
+import 'package:adbhut/Utils/CommonFun.dart';
 import 'package:flutter/material.dart';
 
 class Enquiryform extends StatelessWidget {
@@ -5,30 +7,35 @@ class Enquiryform extends StatelessWidget {
 
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController referenceController = TextEditingController();
+  TextEditingController statusController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
 
   void login(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      String username = usernameController.text;
-      String password = passwordController.text;
-
-      // Dummy check
-      if (username.isEmpty) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Enter User Name")));
-      } else if (password.isEmpty) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Enter Password")));
-      } else {
-        Navigator.pop(context);
-      }
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Form submitted successfully!")));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(""),
+        actions: [notificationUI()],
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+        ),
+      ),
+      drawer: CustomDrawer(),
       body: Center(
         child: Container(
           width: 350,
@@ -55,7 +62,7 @@ class Enquiryform extends StatelessWidget {
                       value!.isEmpty ? "Enter username" : null,
                 ),
                 TextFormField(
-                  controller: usernameController,
+                  controller: passwordController,
                   decoration: InputDecoration(
                     labelText: "Mobile Number",
                     border: OutlineInputBorder(),
@@ -64,16 +71,21 @@ class Enquiryform extends StatelessWidget {
                       value!.isEmpty ? "Enter mobile number" : null,
                 ),
                 TextFormField(
-                  controller: usernameController,
+                  minLines: 1,
+                  maxLines: null, // grows automatically
+                  keyboardType: TextInputType.multiline,
+                  controller: addressController,
                   decoration: InputDecoration(
                     labelText: "Address",
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) => value!.isEmpty ? "Enter address" : null,
                 ),
-
                 TextFormField(
-                  controller: usernameController,
+                  minLines: 1,
+                  maxLines: null, // grows automatically
+                  keyboardType: TextInputType.multiline,
+                  controller: referenceController,
                   decoration: InputDecoration(
                     labelText: "Reference",
                     border: OutlineInputBorder(),
@@ -81,9 +93,11 @@ class Enquiryform extends StatelessWidget {
                   validator: (value) =>
                       value!.isEmpty ? "Enter reference" : null,
                 ),
-
                 TextFormField(
-                  controller: usernameController,
+                  minLines: 1,
+                  maxLines: null, // grows automatically
+                  keyboardType: TextInputType.multiline,
+                  controller: descriptionController,
                   decoration: InputDecoration(
                     labelText: "Description",
                     border: OutlineInputBorder(),
@@ -91,8 +105,22 @@ class Enquiryform extends StatelessWidget {
                   validator: (value) =>
                       value!.isEmpty ? "Enter description" : null,
                 ),
+                DropdownButtonFormField<String>(
+                  decoration: InputDecoration(
+                    labelText: "Select Status",
+                    border: OutlineInputBorder(),
+                  ),
+                  items: ['Pending', 'In Progress', 'Resolved', 'Closed']
+                      .map(
+                        (item) =>
+                            DropdownMenuItem(value: item, child: Text(item)),
+                      )
+                      .toList(),
+                  onChanged: (value) {},
+                  validator: (value) =>
+                      value == null ? "select a Status" : null,
+                ),
 
-                // Password
                 SizedBox(height: 20),
 
                 // Button
