@@ -49,8 +49,8 @@ dev_dependencies:
   # flutter_launcher_icons: ^0.13.1
 
 flutter_native_splash:
-  color: "#221E1C"
-  image: assets/logo3.png
+  color: "#ffffff"
+  image: assets/logo.png
   android: true
   ios: true
 
@@ -58,8 +58,8 @@ flutter_native_splash:
   ios_content_mode: center       # 👈 FIX stretch  
 
   android_12:
-    color: "#221E1C"
-    image: assets/logo3.png
+    color: "#ffffff"
+    image: assets/logo.png
 
 # flutter_icons:
 #   color: "#000000"

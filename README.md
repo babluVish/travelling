@@ -20,3 +20,14 @@ samples, guidance on mobile development, and a full API reference.
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 adb pair 192.168.29.69:42985
 adb connect 192.168.29.69:38647
+
+
+============upload to vercel============
+Build command:
+flutter/bin/flutter build web --release
+
+Output directory:
+build/web
+
+Install command:
+if cd flutter; then git pull && cd .. ; else git clone https://github.com/flutter/flutter.git; fi && ls && flutter/bin/flutter doctor && flutter/bin/flutter clean && flutter/bin/flutter config --enable-web
