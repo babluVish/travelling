@@ -55,11 +55,11 @@ class Enquiryform extends StatelessWidget {
                 TextFormField(
                   controller: usernameController,
                   decoration: InputDecoration(
-                    labelText: "Username",
+                    labelText: "Guest Name",
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) =>
-                      value!.isEmpty ? "Enter username" : null,
+                      value!.isEmpty ? "Enter guest name" : null,
                 ),
                 TextFormField(
                   controller: passwordController,
