@@ -136,6 +136,7 @@ class Enquiryform extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: bottomUI(),
     );
   }
 }

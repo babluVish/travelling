@@ -25,3 +25,16 @@ Widget notificationUI() {
     ],
   );
 }
+
+Widget bottomUI() {
+  return SafeArea(
+    child: Container(
+      padding: EdgeInsets.all(16),
+      child: Text(
+        '@ Copyright 2026 Get Set Adventure. All rights reserved.',
+        textAlign: TextAlign.center,
+        style: TextStyle(color: Colors.blue),
+      ),
+    ),
+  );
+}

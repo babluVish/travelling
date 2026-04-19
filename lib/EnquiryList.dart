@@ -88,6 +88,7 @@ class EnquiryList extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: bottomUI(),
     );
   }
 

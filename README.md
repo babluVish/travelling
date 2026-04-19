@@ -21,7 +21,7 @@ export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 adb pair 192.168.29.69:42985
 adb connect 192.168.29.69:38647
 
-flutter run -d web-server   
+flutter run -d web-server
 
 ============upload to vercel============
 Build command:

@@ -288,6 +288,7 @@
 // }
 
 import 'package:adbhut/EnquiryForm.dart';
+import 'package:adbhut/Utils/CommonFun.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -409,6 +410,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
+      bottomNavigationBar: bottomUI(),
     );
   }
 }
@@ -495,6 +497,7 @@ class SignUpPage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: bottomUI(),
     );
   }
 }
